@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/java-multi-threading.iml" filepath="$PROJECT_DIR$/.idea/java-multi-threading.iml" />
       <module fileurl="file://$PROJECT_DIR$/odd-even/odd-even.iml" filepath="$PROJECT_DIR$/odd-even/odd-even.iml" />
+      <module fileurl="file://$PROJECT_DIR$/print-prime-numbers/print-prime-numbers.iml" filepath="$PROJECT_DIR$/print-prime-numbers/print-prime-numbers.iml" />
     </modules>
   </component>
 </project>
