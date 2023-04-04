@@ -8,7 +8,7 @@ public class OddEven {
     public synchronized void printEven() {
         while(counter.get() < COUNT_MAX) {
             if(counter.get() % 2 == 0) {
-                System.out.println("Even: " + counter.get()+" printed from thread "+Thread.currentThread().getName());
+                System.out.println("Even: " + counter.get() + " printed from thread "+Thread.currentThread().getName());
                 counter.incrementAndGet();
                 notify();
             } else {
