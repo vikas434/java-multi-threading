@@ -5,6 +5,7 @@ public class MainWithThreads {
         var countPrimeNumberTill = 1000000;
         AtomicInteger counter = new AtomicInteger();
         var printPrimeNumber = new PrintPrimeNumber();
+        var startTimeOverall = System.currentTimeMillis();
         Thread t1 = new Thread(() -> {
             var startTime = System.currentTimeMillis();
             for (var i = 2; i <= countPrimeNumberTill/2; i++) {
@@ -25,6 +26,23 @@ public class MainWithThreads {
         });
         t1.start();
         t2.start();
-        // total time = 29928 milliseconds
+
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        // total time = 29928 milliseconds without join
+        System.out.println("Total time overall "+ getTime(startTimeOverall) + " total count "+ counter.get());
+//        Total time taken by thread t1 is 7881 milliseconds
+//        Total time taken by thread t2 is 21958 milliseconds
+//        Total time overall 21961 total count 78498
+
+
+    }
+
+    private static long getTime(long startTimeOverall) {
+        return System.currentTimeMillis() - startTimeOverall;
     }
 }
